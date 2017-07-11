@@ -15,6 +15,8 @@ namespace Grades
             //synth.Speak("hiii Ravi!");
 
             GradeBook book = new GradeBook();
+            book.NameChanged += new NameChangedDelegate(OnNameChanged);
+            book.NameChanged += new NameChangedDelegate(OnNameChanged2);
             book.Name = "Ravi's Grade Book";
             book.Name = null;
             book.AddGrades(91);
@@ -26,6 +28,16 @@ namespace Grades
             WriteResult("Average", stats.AverageGrade);
             WriteResult("Highest", (int)stats.HighestGrade);
             WriteResult("Lowest", stats.LowestGrade);
+        }
+
+        static void OnNameChanged(string existingName, string newName)
+        {
+            Console.WriteLine($"Grade book changing name from {existingName} to {newName}");
+        }
+
+        static void OnNameChanged2(string existingName, string newName)
+        {
+            Console.WriteLine("***");
         }
 
         static void WriteResult(string description, int result)
