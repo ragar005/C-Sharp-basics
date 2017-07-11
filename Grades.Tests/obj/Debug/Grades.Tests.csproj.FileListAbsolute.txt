@@ -1,0 +1,15 @@
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Grades.Tests.dll
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Grades.Tests.pdb
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\obj\Debug\Grades.Tests.csprojResolveAssemblyReference.cache
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\obj\Debug\Grades.Tests.dll
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\obj\Debug\Grades.Tests.pdb
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Grades.exe
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Grades.pdb
+c:\Users\ravi.agarthi\onedrive - crossmatch\my documents\visual studio 2017\Projects\Grades\Grades.Tests\bin\Debug\Grades.exe.config
