@@ -34,12 +34,18 @@ namespace Grades
             WriteResult("Average", stats.AverageGrade);
             WriteResult("Highest", (int)stats.HighestGrade);
             WriteResult("Lowest", stats.LowestGrade);
+            WriteResult("Grade", stats.LetterGrade);
         }
 
         //static void OnNameChanged(string existingName, string newName)
         //{
         //    Console.WriteLine($"Grade book changing name from {existingName} to {newName}");
         //}
+
+        static void WriteResult(string description, string result)
+        {
+            Console.WriteLine(description + ":" + result);
+        }
 
         static void OnNameChanged(object sender, NameChangedEventArgs args)
         {
