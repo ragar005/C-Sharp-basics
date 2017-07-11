@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    public class GradeBook
+    public class GradeBook: GradeTracker
     {
         public GradeBook()
         {
@@ -15,7 +15,12 @@ namespace Grades
             grades = new List<float>();
         }
 
-        public GradeStatistics ComputeStatistics()
+        public override void AddGrades(float grade)
+        {
+            grades.Add(grade);
+        }
+
+        public override GradeStatistics ComputeStatistics()
         {
             float sum = 0;
             GradeStatistics stats = new GradeStatistics();
@@ -29,45 +34,9 @@ namespace Grades
             return stats;
         }
 
-        public void AddGrades(float grade)
-        {
-            grades.Add(grade);
-        }
 
 
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-
-            set
-            {
-                if (String.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Name Cannot be Null");
-                }
-
-                //    if (_name != value)
-                //{
-                //    NameChangedEventArgs args = new NameChangedEventArgs();
-                //    args.ExistingName = _name;
-                //    args.NewName = value;
-                //    //Delegate 
-                //    NameChanged(this, args);
-                //}
-                _name = value;
-
-
-            }
-        }
-
-
-
-        public event NameChangedDelegate NameChanged;
-
-        public void WriteGrades(TextWriter destination)
+        public override void WriteGrades(TextWriter destination)
         {
             for (int i = grades.Count; i > 0; i--)
             {
@@ -75,9 +44,8 @@ namespace Grades
             }
         }
 
+        protected List<float> grades;
 
 
-        private string _name;
-        private List<float> grades;
     }
 }

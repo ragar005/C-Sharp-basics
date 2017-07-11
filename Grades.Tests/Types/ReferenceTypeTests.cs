@@ -60,15 +60,15 @@ namespace Grades.Tests.Types
         [TestMethod]
         public void ReferenceTypePassByValue()
         {
-            GradeBook book1 = new GradeBook();
-            GradeBook book2 = book1;
+            ThrowAwayGradeBook book1 = new ThrowAwayGradeBook();
+            ThrowAwayGradeBook book2 = book1;
 
             GiveBookAName(book2);
             Assert.AreEqual("A GradeBook", book1.Name);
 
         }
 
-        private void GiveBookAName(GradeBook book)
+        private void GiveBookAName(ThrowAwayGradeBook book)
         {
             book.Name = "A GradeBook";
         }
@@ -96,9 +96,9 @@ namespace Grades.Tests.Types
         [TestMethod]
         public void GradeBookVariablesHoldAReference()
         {
-            GradeBook g1 = new GradeBook();
-            GradeBook g2 = g1;
-            g1 = new GradeBook();
+            ThrowAwayGradeBook g1 = new ThrowAwayGradeBook();
+            ThrowAwayGradeBook g2 = g1;
+            g1 = new ThrowAwayGradeBook();
             g1.Name = "Ravi's Grade Book";
             Assert.AreNotEqual(g1.Name, g2.Name);
            
