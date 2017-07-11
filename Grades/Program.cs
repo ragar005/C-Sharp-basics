@@ -16,7 +16,13 @@ namespace Grades
 
             GradeBook book = new GradeBook();
             book.NameChanged += new NameChangedDelegate(OnNameChanged);
-            book.NameChanged += new NameChangedDelegate(OnNameChanged2);
+            
+            // book.NameChanged = null; //Error because of event. A example to not use delegate
+
+            //book.NameChanged += OnNameChanged;
+            //book.NameChanged += OnNameChanged2; // No need to use new NameChangedDelegate
+
+
             book.Name = "Ravi's Grade Book";
             book.Name = null;
             book.AddGrades(91);
@@ -30,15 +36,16 @@ namespace Grades
             WriteResult("Lowest", stats.LowestGrade);
         }
 
-        static void OnNameChanged(string existingName, string newName)
+        //static void OnNameChanged(string existingName, string newName)
+        //{
+        //    Console.WriteLine($"Grade book changing name from {existingName} to {newName}");
+        //}
+
+        static void OnNameChanged(object sender, NameChangedEventArgs args)
         {
-            Console.WriteLine($"Grade book changing name from {existingName} to {newName}");
+            Console.WriteLine($"Grade book changing name from {args.ExistingName} to {args.NewName}");
         }
 
-        static void OnNameChanged2(string existingName, string newName)
-        {
-            Console.WriteLine("***");
-        }
 
         static void WriteResult(string description, int result)
         {
