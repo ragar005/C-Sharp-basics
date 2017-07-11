@@ -15,13 +15,6 @@ namespace Grades
             //synth.Speak("hiii Ravi!");
 
             GradeBook book = new GradeBook();
-            book.NameChanged += new NameChangedDelegate(OnNameChanged);
-
-            // book.NameChanged = null; //Error because of event. A example to not use delegate
-
-            //book.NameChanged += OnNameChanged;
-            //book.NameChanged += OnNameChanged2; // No need to use new NameChangedDelegate
-  
             try
             {
                 Console.WriteLine("Enter a name");
@@ -31,6 +24,19 @@ namespace Grades
             {
                 Console.WriteLine(ex.Message);
             }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Something went wrong");
+            }
+
+            book.NameChanged += new NameChangedDelegate(OnNameChanged);
+
+            // book.NameChanged = null; //Error because of event. A example to not use delegate
+
+            //book.NameChanged += OnNameChanged;
+            //book.NameChanged += OnNameChanged2; // No need to use new NameChangedDelegate
+
+
             //book.Name = "Ravi's Grade Book";
             //book.Name = null;
             book.AddGrades(91);
