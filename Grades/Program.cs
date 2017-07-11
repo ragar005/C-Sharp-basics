@@ -16,15 +16,23 @@ namespace Grades
 
             GradeBook book = new GradeBook();
             book.NameChanged += new NameChangedDelegate(OnNameChanged);
-            
+
             // book.NameChanged = null; //Error because of event. A example to not use delegate
 
             //book.NameChanged += OnNameChanged;
             //book.NameChanged += OnNameChanged2; // No need to use new NameChangedDelegate
-
-
-            book.Name = "Ravi's Grade Book";
-            book.Name = null;
+  
+            try
+            {
+                Console.WriteLine("Enter a name");
+                book.Name = Console.ReadLine();
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            //book.Name = "Ravi's Grade Book";
+            //book.Name = null;
             book.AddGrades(91);
             book.AddGrades(89.5f);
             book.AddGrades(75);
