@@ -44,6 +44,29 @@ namespace Grades
             }
         }
         
+        public string Description
+        {
+            get
+            {
+                string result;
+                switch (LetterGrade)
+                {
+                    case "A":
+                        result = "Excellent";
+                        break;
+
+                    case "B":
+                        result = "Good";
+                        break;
+                    default:
+                        result = "Not Good";
+                        break;
+                }
+                return result;
+            }
+        }
+
+
         public float AverageGrade;
         public float HighestGrade;
         public float LowestGrade;

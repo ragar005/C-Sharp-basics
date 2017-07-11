@@ -35,6 +35,7 @@ namespace Grades
             WriteResult("Highest", (int)stats.HighestGrade);
             WriteResult("Lowest", stats.LowestGrade);
             WriteResult("Grade", stats.LetterGrade);
+            WriteResult(stats.Description, stats.LetterGrade);
         }
 
         //static void OnNameChanged(string existingName, string newName)
