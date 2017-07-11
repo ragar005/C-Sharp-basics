@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Speech.Synthesis;
 using System.Text;
@@ -15,21 +16,10 @@ namespace Grades
             //synth.Speak("hiii Ravi!");
 
             GradeBook book = new GradeBook();
-            try
-            {
-                Console.WriteLine("Enter a name");
-                book.Name = Console.ReadLine();
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            catch (NullReferenceException)
-            {
-                Console.WriteLine("Something went wrong");
-            }
+            NewMethod(book);
 
-            book.NameChanged += new NameChangedDelegate(OnNameChanged);
+
+            //book.NameChanged += new NameChangedDelegate(OnNameChanged);
 
             // book.NameChanged = null; //Error because of event. A example to not use delegate
 
@@ -39,10 +29,15 @@ namespace Grades
 
             //book.Name = "Ravi's Grade Book";
             //book.Name = null;
-            book.AddGrades(91);
-            book.AddGrades(89.5f);
-            book.AddGrades(75);
+            AddGrades(book);
 
+            WriteResults(book);
+
+            SaveGrades(book);
+        }
+
+        private static void WriteResults(GradeBook book)
+        {
             GradeStatistics stats = book.ComputeStatistics();
             Console.WriteLine(book.Name);
             WriteResult("Average", stats.AverageGrade);
@@ -50,6 +45,35 @@ namespace Grades
             WriteResult("Lowest", stats.LowestGrade);
             WriteResult("Grade", stats.LetterGrade);
             WriteResult(stats.Description, stats.LetterGrade);
+        }
+
+        private static void SaveGrades(GradeBook book)
+        {
+            using (StreamWriter outputFile = File.CreateText("grades.txt"))
+            {
+                book.WriteGrades(outputFile);
+                //outputFile.Close();
+            }
+        }
+
+        private static void AddGrades(GradeBook book)
+        {
+            book.AddGrades(91);
+            book.AddGrades(89.5f);
+            book.AddGrades(75);
+        }
+
+        private static void NewMethod(GradeBook book)
+        {
+            try
+            {
+                Console.WriteLine("Enter a name");
+                book.Name = Console.ReadLine();
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         //static void OnNameChanged(string existingName, string newName)
@@ -77,5 +101,7 @@ namespace Grades
         {
             Console.WriteLine($"{description}: {result:F2}");
         }
+
+
     }
 }
